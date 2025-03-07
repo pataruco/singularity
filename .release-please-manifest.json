@@ -1,4 +1,4 @@
 {
-  "applications/api": "0.0.0",
-  "applications/nba": "0.0.0"
+  "applications/api": "1.0.0",
+  "applications/nba": "1.0.0"
 }
