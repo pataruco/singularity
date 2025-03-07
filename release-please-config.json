@@ -3,22 +3,19 @@
   "packages": {
     "applications/api": {
       "changelog-path": "CHANGELOG.md",
+      "versioning": "default",
       "release-type": "simple",
-      "bump-minor-pre-major": false,
-      "bump-patch-for-minor-pre-major": false,
-      "draft": false,
-      "prerelease": false,
       "package-name": "customer-api"
     },
     "applications/nba": {
       "changelog-path": "CHANGELOG.md",
       "release-type": "simple",
-      "bump-minor-pre-major": false,
-      "bump-patch-for-minor-pre-major": false,
-      "draft": false,
-      "prerelease": false,
+      "versioning": "default",
       "package-name": "next-best-action-api"
     }
   },
-  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+  "pull-request-title-pattern": "",
+  "pull-request-header": "Release ${component} ${version}",
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "separate-pull-requests": true
 }
