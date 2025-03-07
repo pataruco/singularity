@@ -67,3 +67,4 @@ jobs:
           SELF_HOSTED_CDP_RUNNER_ROOT: ${{ vars.SELF_HOSTED_CDP_RUNNER_ROOT }}
         with:
           application: ${{ matrix.application }}
+          version: $(git rev-parse --short ${{ github.sha }})
