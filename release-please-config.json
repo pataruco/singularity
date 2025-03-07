@@ -14,8 +14,8 @@
       "package-name": "next-best-action-api"
     }
   },
-  "pull-request-title-pattern": "",
-  "pull-request-header": "Release ${component} ${version}",
+  "pull-request-title-pattern": "chore$: release${component} ${version}",
+  "pull-request-header": "🚀 Release",
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
   "separate-pull-requests": true
 }
