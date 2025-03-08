@@ -1,15 +1,22 @@
 {
   "always-update": true,
+  "draft-pull-request": true,
   "packages": {
-    "customer-api": {
+    "applications/api": {
       "changelog-path": "CHANGELOG.md",
-      "release-type": "dotnet-yoshi",
-      "bump-minor-pre-major": false,
-      "bump-patch-for-minor-pre-major": false,
-      "draft": false,
-      "prerelease": false,
-      "version-file": "./applications/api/.release-please-manifest.json"
+      "versioning": "default",
+      "release-type": "simple",
+      "package-name": "customer-api"
+    },
+    "applications/nba": {
+      "changelog-path": "CHANGELOG.md",
+      "release-type": "simple",
+      "versioning": "default",
+      "package-name": "next-best-action-api"
     }
   },
-  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+  "pull-request-title-pattern": "chore: release${component} ${version}",
+  "pull-request-header": "🚀 Release",
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "separate-pull-requests": true
 }
