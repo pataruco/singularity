@@ -1,5 +1,6 @@
 {
   "always-update": true,
+  "draft-pull-request": true,
   "packages": {
     "applications/api": {
       "changelog-path": "CHANGELOG.md",
