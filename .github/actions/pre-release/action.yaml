@@ -1,0 +1,22 @@
+name: Create pre release
+description: Create pull request, changelogs and new versions for applications affected
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v4
+      with:
+        run_install: false
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: './.nvmrc'
+        cache: pnpm
+
+    - name: Install dot net
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0
+
+    - name: Install Node dependencies 📦
+      shell: bash
+      run: pnpm install
