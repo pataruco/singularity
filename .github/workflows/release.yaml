@@ -29,3 +29,4 @@ jobs:
         name: 🚀 version bumps and changelogs
         with:
           token: ${{ secrets.RELEASE_PLEASE_GH_TOKEN }}
+          include-component-in-tag: true
