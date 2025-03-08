@@ -1,20 +1,12 @@
 name: Build and push image(s) to Azure Container Registry
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  push:
     branches:
       - main
     paths:
-      - .github/workflows/pr.yaml
       - applications/**/*
+      - '!applications/auth0-post-login-trigger/**/*'
       - libraries/**/*
-  # push:
-  #   branches:
-  #     - main
-  #   paths:
-  #     - applications/**/*
-  #     - '!applications/auth0-post-login-trigger/**/*'
-  #     - libraries/**/*
 
 permissions:
   contents: write
@@ -81,26 +73,3 @@ jobs:
         with:
           application: ${{ matrix.application }}
           version: $(git rev-parse --short ${{ github.sha }})
-
-  pre-release:
-    name: Prepare version bumps and changelogs
-    runs-on: self-hosted-cdp
-    needs: build-and-push
-
-    steps:
-      - name: 🛎️ Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: 🤖 Create github app token
-        id: create_token
-        uses: tibdex/github-app-token@v2
-        with:
-          app_id: ${{ vars.DEPLOY_GITHUB_APP_ID }}
-          private_key: ${{ secrets.DEPLOY_GITHUB_APP_PRIVATE_KEY }}
-
-      - uses: googleapis/release-please-action@v4
-        name: 🚀 version bumps and changelogs
-        with:
-          token: ${{ steps.create_token.outputs.token }}
