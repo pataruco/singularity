@@ -7,11 +7,6 @@ on:
       - applications/**/*
       - '!applications/auth0-post-login-trigger/**/*'
       - libraries/**/*
-
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   get-applications-to-build:
     name: Get applications to build

@@ -55,16 +55,14 @@ sequenceDiagram
     Developer->>SVC: Merge commit/PR
     SVC->>GitHub Action release-please: Commit Merged
     GitHub Action release-please->>SVC: Open/update release PR per application affected
-    GitHub Action release-please->>SVC: Release PR
     loop
         SVC->>GitHub Action release-please: New commit/PR changes
-        GitHub Action release-please->>SVC: Update Release(s) PR(s)
+        GitHub Action release-please->>SVC: Update release(s) PR(s)
     end
     Developer->>SVC: Review/Merge Release PR
-    SVC->>GitHub Action release-please: Release PR Merged
+    SVC->>GitHub Action release-please: Release PR Mmrged
     GitHub Action release-please->>SVC: Create GitHub release (optional)
-    GitHub Action release-please->>SVC: Create Git tags
-    GitHub Action release-please-->>SVC: Release Created
+    GitHub Action release-please->>SVC: Create Git tagsx
 ```
 
 ## Consequences
