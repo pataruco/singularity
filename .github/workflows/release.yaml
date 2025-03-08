@@ -1,0 +1,31 @@
+name: release
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+    paths:
+      - .github/workflows/release.yaml
+  merge_group:
+    types: [checks_requested]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: googleapis/release-please-action@v4
+        name: 🚀 version bumps and changelogs
+        with:
+          token: ${{ secrets.RELEASE_PLEASE_GH_TOKEN }}
