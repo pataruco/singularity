@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
   "applications/api": "1.0.0",
   "applications/nba": "0.0.0"
+=======
+  "applications/api": "0.0.0",
+  "applications/nba": "1.0.0"
+>>>>>>> 2adcb10 (chore: release next-best-action-api 1.0.0)
 }
